@@ -6,8 +6,6 @@ import Menu from '../components/Menu'
 import ProjectCard from '../components/ProjectCard';
 import CustomizedTimeline from '../components/Timeline';
 
-import Slide from '@mui/material/Slide';
-import Fade from '@mui/material/Fade';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
@@ -55,36 +53,22 @@ function Home() {
       };
   return (
     <>
-    <Fade in={true} mountOnEnter unmountOnExit>
-        <div id='hamburger'><Menu/></div>
-    </Fade>
+    <div id='hamburger'><Menu/></div>
     <Fab aria-label="Back to Top" onClick={scrollToTop} id='GoTop'>
         <ArrowUpwardIcon />
       </Fab>
     <div id='AboutMe'>
         <div id="Me">
-            <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-                <h1>Hey, Moi c'est David 👋<br></br> Développeur Web & Mobile</h1>
-            </Slide>
-            <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-                <h3>Je construit des applications et sites pour le web ✌️</h3>
-            </Slide>
+            <h1>Hey, Moi c'est David 👋<br></br> Développeur Web & Mobile</h1>
+            <h3>Je construit des applications et sites pour le web ✌️</h3>
             <div>
-                <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-                    <button><a href='https://github.com/dvdmnc'><img id='github' src={Github}/>Github</a></button>
-                </Slide>
-                <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-                    <button><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'><img id='linkedin' src={Linkedin}/>Linkedin</a></button>
-                </Slide>
+                <button><a href='https://github.com/dvdmnc'><img id='github' src={Github}/>Github</a></button>
+                <button><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'><img id='linkedin' src={Linkedin}/>Linkedin</a></button>
             </div>
         </div>
-        <Fade in={true} mountOnEnter unmountOnExit>
-            <img id='MePic' src={Me}/>
-        </Fade>
+        <img id='MePic' src={Me}/>
     </div>
-    <Fade in={true} mountOnEnter unmountOnExit>
-        <h1 id='skillstitle'>Mes compétences</h1>
-    </Fade>
+    <h1 id='skillstitle'>Mes compétences</h1>
     <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent='center' alignItems='center' padding={5} id='skills'>
         <SkillsPaper square={false} className='skillsbox'>
             <img className='top-icon' src={frontend}/>
