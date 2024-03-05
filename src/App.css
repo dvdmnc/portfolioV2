@@ -1,0 +1,221 @@
+body{
+  background-color: #FEFBE9;
+  margin: 0;
+  padding: 0;
+  color: #4F3422;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+#GoTop{
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  z-index: 10
+}
+
+#hamburger{
+  position: absolute;
+  z-index: 10;
+}
+
+#dropdown-menu {
+  border-radius: 10px;
+  border: 1px solid #E9C162;
+  box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+  margin-top: 17px;
+  position: absolute;
+  background-color: #FFF7C2;
+  z-index: 10;
+  margin-left: 10px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 10;
+  }
+
+  a {
+    text-decoration: none;
+    display: block;
+    color: #4F3422;
+    font-size: 15px;
+    padding: 16px 20px;
+    font-weight: 600;
+    box-shadow: 0px 0px 3px -2px rgba(0, 0, 0, 0.5);
+    transition: all ease-in-out 0.3s;
+
+    &:hover{
+      background-color: #FFEE9C;
+    }
+    &:active,
+    &:focus {
+      background-color: #FBE577;
+    }
+  }
+}
+
+#AboutMe{
+  background-color: #FFC53D;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (max-width:900px){
+  #AboutMe{
+    flex-direction: column;
+  }
+}
+
+#Me{
+  transform: translateX(15vw);
+  min-width: 30vw;
+
+  h1{
+    font-size: 44px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    margin-right: 100px;
+  }
+
+  h3{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 22px;
+    margin-right: 100px;
+  }
+
+  button{
+    background-color: #FFF7C2;
+    border-radius: 20px;
+    color: #4F3422;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    &:hover{
+      background-color: #FFEE9C;
+    }
+
+    img{
+      margin-right: 3px;
+    }
+
+    a{
+      color: #4F3422;
+      text-decoration: none;
+    }
+  }
+}
+
+#MePic{
+  height: 100vh;
+  width: auto;
+  transform: translateX(20vw);
+}
+
+@media (max-width:900px){
+  #MePic{
+    height: 50vh;
+    width: auto;
+  }
+}
+
+#skillstitle{
+  font-family: "Merriweather", serif;
+  text-align: center;
+}
+
+#skills{
+  
+  .skillsbox{
+    overflow-y: hidden;
+
+    .align{
+      display: flex;
+      align-items: center;
+    }
+  
+  }
+
+  h2{
+    background: -webkit-linear-gradient(0deg, #FFC53D,#4F3422);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    font-family: "Merriweather", serif;
+  }
+
+  .skill{
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4{
+    color: #4F3422;
+    font-size: 22px;
+    font-family:'Courier New', Courier, monospace;
+    opacity: 0.6;
+    margin-right: 20px;
+    display: inline-block;
+  }
+
+  .top-icon{
+    width: 30px;
+    height: auto;
+  }
+
+  .icon{
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    opacity: 0.5;
+  }
+
+}
+@media (max-width:900px){
+  .skill{
+    height: auto;
+  }
+}
+
+#projects{
+  background-color: #FFC53D;
+  width: 100vw;
+  overflow: hidden;
+  
+  h1{
+    font-family: "Merriweather", serif;
+  }
+
+  p{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 600;
+  }
+}
+
+footer{
+  background-color: #FEFBE9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h5{
+    margin: 10px;
+
+    a{
+      text-decoration: none;
+      color: #4F3422;
+      &:hover{
+        color:#FFC53D;
+      }
+    }
+  }
+}
