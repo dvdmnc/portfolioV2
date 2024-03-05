@@ -20,7 +20,7 @@ function Menu() {
             <ul>
               <Link to={'/'}  style={{textDecoration: 'none', }}><li>ACCUEIL</li></Link>
               <Link to={'/english'}  style={{textDecoration: 'none', }}><li>ENGLISH</li></Link>
-              <li><a href="#">CONTACT</a></li>
+              <li><a href="#footer" >CONTACT</a></li>
             </ul>
           </div>
         </Zoom>
