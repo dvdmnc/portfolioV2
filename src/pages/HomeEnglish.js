@@ -133,7 +133,7 @@ function HomeEnglish() {
             </Grid>
         </Grid>
     </Stack>
-    <footer>
+    <footer id='footer'>
         <h5><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'>Linkedin</a></h5>
         <h5><a href='https://github.com/dvdmnc'>Github</a></h5>
         <h5><a href='//api.whatsapp.com/send?phone=33616570358&text=Hello, i contact you from your website'>Whatsapp</a></h5>
