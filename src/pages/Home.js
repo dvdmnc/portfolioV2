@@ -5,6 +5,8 @@ import '../fonts.css'
 import Menu from '../components/Menu'
 import ProjectCard from '../components/ProjectCard';
 import CustomizedTimeline from '../components/Timeline';
+import ScrollBar from '../components/ScrollBar';
+import Motion from '../components/Motion';
 
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -53,6 +55,7 @@ function Home() {
       };
   return (
     <>
+    <ScrollBar />
     <div id='hamburger'><Menu/></div>
     <Fab aria-label="Back to Top" onClick={scrollToTop} id='GoTop'>
         <ArrowUpwardIcon />
@@ -70,6 +73,7 @@ function Home() {
     </div>
     <h1 id='skillstitle'>Mes compétences</h1>
     <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent='center' alignItems='center' padding={5} id='skills'>
+        <Motion children={
         <SkillsPaper square={false} className='skillsbox'>
             <img className='top-icon' src={frontend}/>
             <br></br>
@@ -97,6 +101,8 @@ function Home() {
                 </Grid>
             </Grid>
         </SkillsPaper>
+        } />
+        <Motion children={
         <SkillsPaper square={false} className='skillsbox'>
             <img className='top-icon' src={backend}/>
             <br></br>
@@ -107,6 +113,8 @@ function Home() {
                 <h4>Django</h4>
             </Stack>
         </SkillsPaper>
+        }/>
+        <Motion children={
         <SkillsPaper square={false} className='skillsbox'>
             <img className='top-icon' src={mobile}/>
             <br></br>
@@ -117,6 +125,7 @@ function Home() {
                 <h4>React Native</h4>
             </Stack>
         </SkillsPaper>
+        }/>
     </Stack>
     <CustomizedTimeline/>
     <Stack direction='column' spacing={2} justifyContent='center' alignItems='center' padding={5} id='projects'>
@@ -124,13 +133,19 @@ function Home() {
         <p>Quelques projets sur lesquels j'ai travaillé</p>
         <Grid container>
             <Grid item xs={12} sm={6} lg={4} >
+                <Motion children={
                 <ProjectCard href={'https://youtu.be/nE8qP0K1IhE'} Src={LocalHospital} title={'IDEL Stock'} description={'Une application mobile de gestion d\'inventaire conçu pour un cabinet d\'infirmière libérales'} link={'Voir le projet sur Youtube'} stack={[react,firebase]}/>
+                }/>
             </Grid>
             <Grid item xs={12} sm={6} lg={4}>
+                <Motion children={
                 <ProjectCard href={'https://youtu.be/05ObRLxx9Pw'} Src={LibraryMusicIcon} title={'MusiQuiz'} description={'Une application web de Quiz Musical conçu pour un musicien professionel'} link={'Voir le projet sur Youtube'} stack={[js,react,django,postgre]}/>
+                }/>
             </Grid>
             <Grid item xs={12} sm={6} lg={4}>
+                <Motion children={
                 <ProjectCard href={'https://youtu.be/X1uOWoI3A9Q'} Src={SailingIcon} title={'Yachting Conseil'} description={'Reproduction d\'un site web de vente de bateau avec NextJS et Material UI'} link={'Voir le projet sur Youtube'} stack={[react,nextjs,mui]}/>
+                }/>
             </Grid>
         </Grid>
     </Stack>

@@ -5,6 +5,8 @@ import '../fonts.css'
 import Menu from '../components/Menu'
 import ProjectCard from '../components/ProjectCard';
 import CustomizedTimelineEnglish from '../components/TimelineEnglish';
+import ScrollBar from '../components/ScrollBar';
+import Motion from '../components/Motion';
 
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -52,10 +54,11 @@ function HomeEnglish() {
       };
   return (
     <>
+    <ScrollBar />
     <div id='hamburger'><Menu/></div>
     <Fab aria-label="Back to Top" onClick={scrollToTop} id='GoTop'>
         <ArrowUpwardIcon />
-      </Fab>
+    </Fab>
     <div id='AboutMe'>
         <div id="Me">
             <h1>Hey, I'm David 👋<br></br> Web & Mobile Developer</h1>
@@ -69,53 +72,59 @@ function HomeEnglish() {
     </div>
     <h1 id='skillstitle'>My skills</h1>
     <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent='center' alignItems='center' padding={5} id='skills'>
-        <SkillsPaper square={false} className='skillsbox'>
-            <img className='top-icon' src={frontend}/>
-            <br></br>
-            <h2>Front End</h2>
-            <Grid container justifyContent='center'>
-                <Grid item md={6}>
-                    <div className='align'>
-                        <img className='icon' src={react}/>
-                        <h4>React</h4>
-                    </div>
-                    <div className='align'>
-                        <img className='icon' src={html}/>
-                        <h4>HTML</h4>
-                    </div>
+        <Motion children={
+            <SkillsPaper square={false} className='skillsbox'>
+                <img className='top-icon' src={frontend}/>
+                <br></br>
+                <h2>Front End</h2>
+                <Grid container justifyContent='center'>
+                    <Grid item md={6}>
+                        <div className='align'>
+                            <img className='icon' src={react}/>
+                            <h4>React</h4>
+                        </div>
+                        <div className='align'>
+                            <img className='icon' src={html}/>
+                            <h4>HTML</h4>
+                        </div>
+                    </Grid>
+                    <Grid item md={6}>
+                        <div className='align'>
+                            <img className='icon' src={js}/>
+                            <h4>Javascript</h4>
+                        </div>
+                        <div className='align'>
+                            <img className='icon' src={css}/>
+                            <h4>CSS</h4>
+                        </div>
+                    </Grid>
                 </Grid>
-                <Grid item md={6}>
-                    <div className='align'>
-                        <img className='icon' src={js}/>
-                        <h4>Javascript</h4>
-                    </div>
-                    <div className='align'>
-                        <img className='icon' src={css}/>
-                        <h4>CSS</h4>
-                    </div>
-                </Grid>
-            </Grid>
-        </SkillsPaper>
-        <SkillsPaper square={false} className='skillsbox'>
-            <img className='top-icon' src={backend}/>
-            <br></br>
-            <h2>Back End</h2>
-            <br></br>
-            <Stack direction='row' className='skill'>
-                <img className='icon' src={django}/>
-                <h4>Django</h4>
-            </Stack>
-        </SkillsPaper>
-        <SkillsPaper square={false} className='skillsbox'>
-            <img className='top-icon' src={mobile}/>
-            <br></br>
-            <h2>Mobile</h2>
-            <br></br>
-            <Stack direction='row' className='skill'>
-                <img className='icon' src={react}/>
-                <h4>React Native</h4>
-            </Stack>
-        </SkillsPaper>
+            </SkillsPaper>
+        }/>
+        <Motion children={
+            <SkillsPaper square={false} className='skillsbox'>
+                <img className='top-icon' src={backend}/>
+                <br></br>
+                <h2>Back End</h2>
+                <br></br>
+                <Stack direction='row' className='skill'>
+                    <img className='icon' src={django}/>
+                    <h4>Django</h4>
+                </Stack>
+            </SkillsPaper>
+        }/>
+        <Motion children={
+            <SkillsPaper square={false} className='skillsbox'>
+                <img className='top-icon' src={mobile}/>
+                <br></br>
+                <h2>Mobile</h2>
+                <br></br>
+                <Stack direction='row' className='skill'>
+                    <img className='icon' src={react}/>
+                    <h4>React Native</h4>
+                </Stack>
+            </SkillsPaper>
+        }/>
     </Stack>
     <CustomizedTimelineEnglish/>
     <Stack direction='column' spacing={2} justifyContent='center' alignItems='center' padding={5} id='projects'>
@@ -123,13 +132,19 @@ function HomeEnglish() {
         <p>Here are a few apps/websites i've worked on</p>
         <Grid container>
             <Grid item xs={12} sm={6} lg={4} >
-                <ProjectCard href={'https://youtu.be/jYsb_sxzcPY'} Src={LocalHospital} title={'IDEL Stock'} description={'A mobile inventory management application designed for a liberal nursing practice'} link={'Watch on Youtube'} stack={[react,firebase]}/>
+                <Motion children={
+                    <ProjectCard href={'https://youtu.be/jYsb_sxzcPY'} Src={LocalHospital} title={'IDEL Stock'} description={'A mobile inventory management application designed for a liberal nursing practice'} link={'Watch on Youtube'} stack={[react,firebase]}/> 
+                }/>
             </Grid>
             <Grid item xs={12} sm={6} lg={4}>
-                <ProjectCard href={'https://youtu.be/8Nyzr3FPNNA'} Src={LibraryMusicIcon} title={'MusiQuiz'} description={'A Music Quiz web application designed for a professional musician'} link={'Watch on Youtube'} stack={[js,react,django,postgre]}/>
+                <Motion children={
+                    <ProjectCard href={'https://youtu.be/8Nyzr3FPNNA'} Src={LibraryMusicIcon} title={'MusiQuiz'} description={'A Music Quiz web application designed for a professional musician'} link={'Watch on Youtube'} stack={[js,react,django,postgre]}/>
+                }/>
             </Grid>
             <Grid item xs={12} sm={6} lg={4}>
-                <ProjectCard href={'https://youtu.be/X1uOWoI3A9Q'} Src={SailingIcon} title={'Yachting Conseil'} description={'Copy of a boat sales website with NextJS and Material UI'} link={'Watch on Youtube (French Version)'} stack={[react,nextjs,mui]}/>
+                <Motion children={
+                    <ProjectCard href={'https://youtu.be/X1uOWoI3A9Q'} Src={SailingIcon} title={'Yachting Conseil'} description={'Copy of a boat sales website with NextJS and Material UI'} link={'Watch on Youtube (French Version)'} stack={[react,nextjs,mui]}/>
+                }/>
             </Grid>
         </Grid>
     </Stack>
