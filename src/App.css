@@ -200,6 +200,11 @@ body{
   .skill{
     height: auto;
   }
+  #skills{
+    .skillsbox{
+      max-width: 70vw
+    }
+  }
 }
 
 #projects{
