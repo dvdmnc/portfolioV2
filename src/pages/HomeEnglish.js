@@ -26,8 +26,7 @@ import backend from '../images/back-end.png'
 import mobile from '../images/developpement-mobile.png'
 import react from '../images/react.png'
 import js from '../images/js-icon.png'
-import html from '../images/html-5.png'
-import css from '../images/css-3.png'
+import python from '../images/python.png'
 import django from '../images/django.png'
 import firebase from '../images/firebase.png'
 import postgre from '../images/postgre.png'
@@ -84,18 +83,8 @@ function HomeEnglish() {
                             <h4>React</h4>
                         </div>
                         <div className='align'>
-                            <img className='icon' src={html}/>
-                            <h4>HTML</h4>
-                        </div>
-                    </Grid>
-                    <Grid item md={6}>
-                        <div className='align'>
                             <img className='icon' src={js}/>
                             <h4>Javascript</h4>
-                        </div>
-                        <div className='align'>
-                            <img className='icon' src={css}/>
-                            <h4>CSS</h4>
                         </div>
                     </Grid>
                 </Grid>
@@ -111,6 +100,10 @@ function HomeEnglish() {
                     <img className='icon' src={django}/>
                     <h4>Django</h4>
                 </Stack>
+                <Stack direction='row' className='skill'>
+                <img className='icon' src={python}/>
+                <h4>Python</h4>
+            </Stack>
             </SkillsPaper>
         }/>
         <Motion children={
