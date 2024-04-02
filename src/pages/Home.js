@@ -20,8 +20,6 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 
 import Me from '../images/mypic.png'
-import Github from '../images/github-sign.png'
-import Linkedin from '../images/linkedin.png'
 import frontend from '../images/contenu-web.png'
 import backend from '../images/back-end.png'
 import mobile from '../images/developpement-mobile.png'
@@ -33,6 +31,8 @@ import firebase from '../images/firebase.png'
 import postgre from '../images/postgre.png'
 import nextjs from '../images/nextjs.png'
 import mui from '../images/mui.png'
+import LinkedinTop from '../images/linkedin-top.png'
+import GithubTop from '../images/github-top.png'
 
 function Home() {
     const SkillsPaper = styled(Paper)(({ theme }) => ({
@@ -56,17 +56,30 @@ function Home() {
     <>
     <ScrollBar />
     <div id='hamburger'><Menu/></div>
+    <div id="menu_socials">
+        <div id="menu">
+            <ul>
+                <li><a href='/'>Accueil</a></li>
+                <li><a href='/english'>English</a></li>
+                <li><a href='/contact'>Contact</a></li>
+            </ul>
+        </div>
+        <div id="socials">
+            <ul>
+                <li><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'><img src={LinkedinTop} /></a></li>
+                <li><a href='https://github.com/dvdmnc'><img src={GithubTop} /></a></li>
+            </ul>
+        </div>
+    </div>
     <Fab aria-label="Back to Top" onClick={scrollToTop} id='GoTop'>
         <ArrowUpwardIcon />
       </Fab>
     <div id='AboutMe'>
         <div id="Me">
-            <h1>Hey, Moi c'est David 👋<br></br> Développeur Web & Mobile</h1>
-            <h3>Je construit des applications et sites pour le web ✌️</h3>
-            <div>
-                <button><a href='https://github.com/dvdmnc'><img id='github' src={Github}/>Github</a></button>
-                <button><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'><img id='linkedin' src={Linkedin}/>Linkedin</a></button>
-            </div>
+            <h1>Hey, Moi c'est David</h1>
+            <h3>Développeur Web & Mobile</h3>
+            <h5>Développeur full-stack en freelance, j'intègre votre design et développe vos applications web et mobiles sur mesures. De la mise en place du cahier des charges jusqu'au déploiement de la version finale du projet et la maintenance, je vous propose mon expertise afin de mener à bien vos projets</h5>
+            <button><a href='/contact'>Contactez-moi</a></button>
         </div>
         <img id='MePic' src={Me}/>
     </div>
@@ -142,12 +155,6 @@ function Home() {
             </Grid>
         </Grid>
     </Stack>
-    <footer id='footer'>
-        <h5><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'>Linkedin</a></h5>
-        <h5><a href='https://github.com/dvdmnc'>Github</a></h5>
-        <h5><a href='//api.whatsapp.com/send?phone=33616570358&text=Bonjour, je vous contacte depuis votre site web'>Whatsapp</a></h5>
-        <h5><a href='mailto:d.menechi@gmail.com?subject=Contact depuis votre site web'>Email</a></h5>
-    </footer>
     </>
   )
 }
