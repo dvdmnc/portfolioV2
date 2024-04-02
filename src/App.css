@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap');
+
 html{
   scroll-behavior: smooth;
 }
@@ -24,9 +27,49 @@ body{
   z-index: 1000;
 }
 
+#menu_socials{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  position:absolute;
+  top:0;
+  width:100vw;
+  padding:2vh 5vw 2vh 2vw;
+
+  ul{
+    list-style: none;
+    display:flex;
+    align-items:center;
+    gap: 5vh;
+
+    li a{
+      text-decoration:none;
+      color:#4f3422;
+      font-size: 16px;
+      font-family: "League Spartan", sans-serif;
+      font-weight: 600;
+
+      img{
+        width:19px;
+        height:19px;
+      }
+    }
+  }
+}
+
 #hamburger{
   position: absolute;
   z-index: 10;
+  display:none
+}
+
+@media (max-width:900px){
+  #hamburger{
+    display:block
+  }
+  #menu_socials{
+    display:none
+  }
 }
 
 #GoTop{
@@ -80,9 +123,11 @@ body{
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
+  gap:5vh;
+  padding-top: 10vh;
 }
 
 @media (max-width:900px){
@@ -92,35 +137,36 @@ body{
 }
 
 #Me{
-  transform: translateX(15vw);
-  min-width: 30vw;
+  transform: translateX(15vw) translateY(-10vh);
+  min-width: 35vw;
 
   h1{
-    font-size: 44px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    margin-right: 100px;
+    font-size: 60px;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 600;
+    margin:0
   }
 
   h3{
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Sanchez', serif;
     font-size: 22px;
-    margin-right: 100px;
+    margin:0
+  }
+
+  h5{
+    font-family:'Sanchez', serif;
+    font-size:16px
   }
 
   button{
     background-color: #FFF7C2;
-    border-radius: 20px;
     color: #4F3422;
     cursor: pointer;
-    margin: 10px;
+    margin: 10px 0px;
     padding: 10px;
+    font-family:'Sanchez',serif;
     &:hover{
       background-color: #FFEE9C;
-    }
-
-    img{
-      margin-right: 3px;
     }
 
     a{
@@ -133,13 +179,17 @@ body{
 #MePic{
   height: 100vh;
   width: auto;
-  transform: translateX(20vw);
+  transform: translateX(15vw);
 }
 
 @media (max-width:900px){
   #MePic{
     height: 50vh;
     width: auto;
+  }
+  #Me{
+    transform:translateY(0);
+    margin:5vh 5vw
   }
 }
 
@@ -223,40 +273,43 @@ body{
   }
 }
 
-footer{
-  background-color: #FEFBE9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.MuiOutlinedInput-notchedOutline{
+  border-color: #4F3422!important;
+}
 
-  h5{
-    margin: 10px;
+#contact-form{
+  margin:auto;
+  padding:30px;
+  box-shadow:10px 10px 20px #000; 
+  border-radius:10px;
+  border:none;
+  background-color:#FFF7C2;
+  width:60vw;
+  min-width: fit-content;
 
-    a{
-      text-decoration: none;
-      color: #4F3422;
-      display: block;
-      position: relative;
-      overflow: hidden;
-      &:hover{
-        color:#FFC53D;
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left:0;
-        width: 100%;
-        height: 0.1em;
-        background-color: #FFC53D;
-        opacity: 1;
-        transform: translate3d(-100%, 0, 0);
-        transition: transform 300ms;
-      }
-      &:hover::after,
-      &:focus::after{
-      transform: translate3d(0, 0, 0);
-      }
-    }
+
+  .contact{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+     color:#4F3422
+  }
+
+  .submit{
+    padding:8px 16px;
+    margin-top: 16px;
+    border-radius:8px;
+    background-color:#4F3422;
+    color:white;
+    &:hover{
+      background-color:white;
+      color:#4F3422
+  }
+  }
+  #success{
+    color:#4F3422
+  }
+  #error{
+    color: red;
   }
 }
