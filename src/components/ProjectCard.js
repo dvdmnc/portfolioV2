@@ -17,8 +17,8 @@ function ProjectCard({href,Src,title,description, link, stack}) {
             <p>{description}</p>
             <p id='link'>{link}</p>
             <div id='stack'>
-              {stack.map((tool) => (
-                <img src={tool}/>
+              {stack.map((tool,index) => (
+                <img src={tool} key={index}/>
               ))}
             </div>
           </div>
