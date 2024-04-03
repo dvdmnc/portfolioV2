@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../fonts.css'
-
 import Menu from '../components/Menu'
 import ProjectCard from '../components/ProjectCard';
 import CustomizedTimelineEnglish from '../components/TimelineEnglish';
@@ -32,8 +30,21 @@ import nextjs from '../images/nextjs.png'
 import mui from '../images/mui.png'
 import LinkedinTop from '../images/linkedin-top.png'
 import GithubTop from '../images/github-top.png'
+import one from '../images/numero-un.png'
+import two from '../images/numero-2.png'
+import three from '../images/numero-3.png'
+import four from '../images/numero-quatre.png'
 
 function HomeEnglish() {
+    const skills = [{title:'Front End',img:frontend,languages:[{img:react,name:'React'},{img:js,name:'Javascript'}]},{title:'Back End',img: backend,languages:[{img:django,name:'Django'},{img:python,name:'Python'}]},{title:'Mobile',img:mobile,languages:[{img:react,name:'React Native'}]}]
+
+    const services = [{title:'Defining your project',text:'Together we define your web and/or mobile project according to your needs and budget',img:one},{title:'Drawing up specifications', text: 'The specifications include the functionalities, graphic charter and size of your project',img:two},{title:'Development of your project',text:'Your project takes shape, up to the testing and final deployment phases',img:three},{title:'Maintenance',text:'A bug? New features to add? I\'ll keep your project up to date',img:four}]
+
+    const certificates = [{date:'2018',img:'f(x)',title:'Bachelor',titleadd:'of Mathematics'},{date:'March 2023',img:'</>',title:'CS50\'X', titleadd:'Introduction to programming',details: ['Python','SQL','HTML & CSS','Algorithms & Data Structures']},{date:'May 2023',img:'www',title:'CS50\'W',titleadd:'Web Programming',details:['Python','Javascript','Django']},{date:'August 2023',img: 'Ai',title:'CS50\'AI',titleadd:'Introduction to Artificial Intelligence',details:['Machine Learning','Neural Networks', "Automatic Natural Language Processing"]},{date: 'October 2023',img:'App',title:'CS50\'M',titleadd:'Mobile App Development',details:['React principes fondamentaux et avancés (Context & Redux)','React Native','React Hooks (self-taught)']}]
+
+    const projects = [{url:'https://youtu.be/nE8qP0K1IhE', img:LocalHospital, title:'IDEL Stock',description:'A mobile inventory management application designed for a private nursing practice', link:'View project on Youtube', stack:[react,firebase]},{url:'https://youtu.be/05ObRLxx9Pw', img:LibraryMusicIcon, title:'MusiQuiz', description:'A Musical Quiz web application designed for a professional musician', link:'View project on Youtube', stack:[js,react,django,postgre]},{url:'', img:LibraryMusicIcon, title:'Loungetime', description:'Presentation website of the Loungetime & Mrs Robinson band', link:'View project on Youtube', stack:[react,django]},{url:'https://youtu.be/X1uOWoI3A9Q', img:SailingIcon, title:'Yachting Conseil', description:'Reproduction of a boat sales website with NextJS and Material UI', link:'View project on Youtube', stack:[react,nextjs,mui]}]
+
+
     const SkillsPaper = styled(Paper)(({ theme }) => ({
         width: '33vw',
         [theme.breakpoints.down('md')]: {
@@ -58,8 +69,8 @@ function HomeEnglish() {
     <div id="menu_socials">
         <div id="menu">
             <ul>
-                <li><a href='/'>Home</a></li>
-                <li><a href='/english'>Français</a></li>
+                <li><a href='/english'>Home</a></li>
+                <li><a href='/'>Français</a></li>
                 <li><a href='/contact'>Contact</a></li>
             </ul>
         </div>
@@ -84,74 +95,78 @@ function HomeEnglish() {
     </div>
     <h1 id='skillstitle'>My skills</h1>
     <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent='center' alignItems='center' padding={5} id='skills'>
-        <Motion children={
-            <SkillsPaper square={false} className='skillsbox'>
-                <img className='top-icon' src={frontend}/>
-                <br></br>
-                <h2>Front End</h2>
-                <Grid container justifyContent='center'>
-                    <Grid item md={6}>
-                        <div className='align'>
-                            <img className='icon' src={react}/>
-                            <h4>React</h4>
-                        </div>
-                        <div className='align'>
-                            <img className='icon' src={js}/>
-                            <h4>Javascript</h4>
-                        </div>
+        {skills.map((skill) => (
+            <Motion key={skill.title} children={
+                <SkillsPaper square={false} className='skillsbox'>
+                    <img className='top-icon' src={skill.img}/>
+                    <br></br>
+                    <h2>{skill.title}</h2>
+                    <Grid container justifyContent='center'>
+                        <Grid item md={6}>
+                        {skill.languages.map((language) => (
+                            <div className='align' key={language.name}>
+                                <img className='icon' src={language.img}/>
+                                <h4>{language.name}</h4>
+                            </div>
+                        ))}
+                        </Grid>
                     </Grid>
-                </Grid>
-            </SkillsPaper>
-        }/>
-        <Motion children={
-            <SkillsPaper square={false} className='skillsbox'>
-                <img className='top-icon' src={backend}/>
-                <br></br>
-                <h2>Back End</h2>
-                <br></br>
-                <Stack direction='row' className='skill'>
-                    <img className='icon' src={django}/>
-                    <h4>Django</h4>
-                </Stack>
-                <Stack direction='row' className='skill'>
-                <img className='icon' src={python}/>
-                <h4>Python</h4>
-            </Stack>
-            </SkillsPaper>
-        }/>
-        <Motion children={
-            <SkillsPaper square={false} className='skillsbox'>
-                <img className='top-icon' src={mobile}/>
-                <br></br>
-                <h2>Mobile</h2>
-                <br></br>
-                <Stack direction='row' className='skill'>
-                    <img className='icon' src={react}/>
-                    <h4>React Native</h4>
-                </Stack>
-            </SkillsPaper>
-        }/>
+                </SkillsPaper>
+                } />
+        ))}
     </Stack>
-    <CustomizedTimelineEnglish/>
+    <Grid container className='services' spacing={2}>
+        <Grid item lg={6} >
+            <h1>My <span>services</span></h1>
+            <h3>I support you from A to Z in your web and/or mobile project
+            </h3>
+        </Grid>
+        <Grid item lg={6} className='services-container'>
+            {services.map((service) => (
+            <div className='service-container' key={service.title}>
+                <img src={service.img} />
+                <div>
+                    <h3>{service.title}</h3>
+                    <p>{service.text}</p>
+                </div>
+            </div>
+            ))}
+        </Grid>
+    </Grid>
+    <div id='my-background'>
+        <div id='title'>
+            <h3>My</h3>
+            <h1>Background</h1>
+        </div>
+        <Grid container spacing={2} className='timeline'>
+             {certificates.map((certificate) => (
+                <Grid item md={2.4} xs={12} className='element' key={certificate.title}>
+                    <p>{certificate.date}</p>
+                    <h4>{certificate.img}</h4>
+                    <h5>{certificate.title}</h5>
+                    <p className={certificate.details? 'add-on' : ''}>{certificate.titleadd}</p>
+                    <ul>
+                        {certificate.details?.map((detail,index) => (
+                            <li key={index}>{detail}</li>
+                        ))}
+                    </ul>
+                </Grid>
+             ))
+             }   
+        </Grid>
+    </div>
+    {/* <CustomizedTimelineEnglish/> */}
     <Stack direction='column' spacing={2} justifyContent='center' alignItems='center' padding={5} id='projects'>
         <h1>My Projects</h1>
         <p>Here are a few apps/websites i've worked on</p>
         <Grid container>
-            <Grid item xs={12} sm={6} lg={4} >
+            {projects.map((project) => (
+               <Grid item xs={12} sm={6} lg={4} key={project.title}>
                 <Motion children={
-                    <ProjectCard href={'https://youtu.be/jYsb_sxzcPY'} Src={LocalHospital} title={'IDEL Stock'} description={'A mobile inventory management application designed for a liberal nursing practice'} link={'Watch on Youtube'} stack={[react,firebase]}/> 
+                <ProjectCard href={project.url} Src={project.img} title={project.title} description={project.description} link={project.link} stack={project.stack}/>
                 }/>
-            </Grid>
-            <Grid item xs={12} sm={6} lg={4}>
-                <Motion children={
-                    <ProjectCard href={'https://youtu.be/8Nyzr3FPNNA'} Src={LibraryMusicIcon} title={'MusiQuiz'} description={'A Music Quiz web application designed for a professional musician'} link={'Watch on Youtube'} stack={[js,react,django,postgre]}/>
-                }/>
-            </Grid>
-            <Grid item xs={12} sm={6} lg={4}>
-                <Motion children={
-                    <ProjectCard href={'https://youtu.be/X1uOWoI3A9Q'} Src={SailingIcon} title={'Yachting Conseil'} description={'Copy of a boat sales website with NextJS and Material UI'} link={'Watch on Youtube (French Version)'} stack={[react,nextjs,mui]}/>
-                }/>
-            </Grid>
+           </Grid> 
+            ))}
         </Grid>
     </Stack>
     </>
