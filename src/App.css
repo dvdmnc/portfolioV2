@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 html{
   scroll-behavior: smooth;
@@ -255,6 +258,137 @@ body{
       max-width: 70vw;
       height: 50vh;
     }
+  }
+}
+
+.services{
+  width: 100vw;
+  height: auto;
+  background: #FFC53D;
+  padding: 5vh 10vw;
+  color: #4F3422;
+  
+  h1{
+    margin-top: 15vh;
+    font-size:60px;
+    font-family: 'League Spartan', sans-serif;
+    span{
+      color: #FEFBE9;
+    }
+  }
+
+  h3{
+    font-family: 'Sanchez',serif;
+    font-size: 23px;
+    margin-right: 10vw;
+  }
+
+  .services-container{
+    background-color: #FEFBE9;
+    padding: 2vh 2vw;
+    border-radius: 20px;
+    font-family: 'League Spartan', sans-serif;
+  
+  
+    .service-container{
+      margin-left: 2vw;
+      display:flex;
+      align-items: center;
+      justify-content:left;
+      gap:1vw;
+      font-size: 18px;
+
+      img{
+        margin-bottom: 4vh;
+      }
+
+      h3{
+        margin-bottom: 0;
+      }
+      p{
+        margin-top: 1vh;
+        font-family: 'Didact Gothic', sans-serif;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media(max-width:900px){
+  .services h1{
+    margin-top: 0;
+  }
+}
+
+#my-background{
+  padding:5vh 5vw;
+  font-family: 'League Spartan';
+
+  #title{
+    max-width: fit-content;
+    margin: auto;
+    h3{
+      background-color: white;
+      margin-bottom: 2vh;
+      font-size: 30px;
+      width: fit-content;
+      margin: auto;
+    }
+    h1{
+      transform: rotateZ(-2deg);
+      margin-top: 0;
+      color: #FFC53D;
+      background-color: white;
+      font-size: 60px;
+    }
+  }
+
+  .timeline{
+    text-align: center;
+    .element{
+
+      h4{
+        background-color: white;
+        color: #FFC53D;
+        border-radius: 50%;
+        border: dotted #FFC53D 1px;
+        width: 70px;
+        height:70px;
+        font-family: 'Atma', system-ui;
+        padding-top: 20px;
+        margin: 2vh auto;
+      }
+
+      h5{
+        font-size: 18px;
+        background-color: #FFC53D;
+        color:white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        width: 100px;
+        margin: auto;
+      }
+
+      .add-on::after{
+        content:'';
+        background-color:#FFC53D;
+        display: block;
+        margin: auto;
+        width:5vw;
+        height: 2px;
+        border-radius: 20px;
+        margin-top: 1vh;
+      }
+      ul{
+        list-style: none;
+        padding-left:0
+      }
+      p,li{
+        font-family: 'Sanchez',serif;
+        font-size:16px
+      }
+    }
+    
   }
 }
 
