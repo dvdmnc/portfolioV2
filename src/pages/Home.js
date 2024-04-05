@@ -78,8 +78,8 @@ function Home() {
         </div>
         <div id="socials">
             <ul>
-                <li><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'><img src={LinkedinTop} /></a></li>
-                <li><a href='https://github.com/dvdmnc'><img src={GithubTop} /></a></li>
+                <li><a href='https://www.linkedin.com/in/david-menechi-6828b6231/'><img src={LinkedinTop} alt='linkedin-icon'/></a></li>
+                <li><a href='https://github.com/dvdmnc'><img src={GithubTop} alt='github-icon'/></a></li>
             </ul>
         </div>
     </div>
@@ -93,21 +93,21 @@ function Home() {
             <h5>Développeur full-stack en freelance, j'intègre votre design et développe vos applications web et mobiles sur mesures. De la mise en place du cahier des charges jusqu'au déploiement de la version finale du projet et la maintenance, je vous propose mon expertise afin de mener à bien vos projets</h5>
             <button><a href='/contact'>Contactez-moi</a></button>
         </div>
-        <img id='MePic' src={Me}/>
+        <img id='MePic' src={Me} alt='David'/>
     </div>
     <h1 id='skillstitle'>Mes compétences</h1>
     <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} justifyContent='center' alignItems='center' padding={5} id='skills'>
         {skills.map((skill) => (
             <Motion key={skill.title} children={
                 <SkillsPaper square={false} className='skillsbox'>
-                    <img className='top-icon' src={skill.img}/>
+                    <img className='top-icon' src={skill.img} alt={skill.title}/>
                     <br></br>
                     <h2>{skill.title}</h2>
                     <Grid container justifyContent='center'>
                         <Grid item md={6}>
                         {skill.languages.map((language) => (
                             <div className='align' key={language.name}>
-                                <img className='icon' src={language.img}/>
+                                <img className='icon' src={language.img} alt={language.name}/>
                                 <h4>{language.name}</h4>
                             </div>
                         ))}
@@ -124,9 +124,9 @@ function Home() {
             </h3>
         </Grid>
         <Grid item lg={6} className='services-container'>
-            {services.map((service) => (
+            {services.map((service,index) => (
             <div className='service-container' key={service.titre}>
-                <img src={service.img} />
+                <img src={service.img} alt={`service ${index+1}`}/>
                 <div>
                     <h3>{service.titre}</h3>
                     <p>{service.texte}</p>
