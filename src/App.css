@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
@@ -287,7 +286,6 @@ body{
     background-color: #FEFBE9;
     padding: 2vh 2vw;
     border-radius: 20px;
-    font-family: 'League Spartan', sans-serif;
   
   
     .service-container{
@@ -304,10 +302,12 @@ body{
 
       h3{
         margin-bottom: 0;
+        font-family: 'League Spartan', sans-serif;
+        font-size:28px;
       }
       p{
         margin-top: 1vh;
-        font-family: 'Didact Gothic', sans-serif;
+        font-family: 'Sanchez', serif;
         font-size: 16px;
       }
     }
@@ -321,7 +321,7 @@ body{
 }
 
 #my-background{
-  padding:5vh 5vw;
+  padding:5vh ;
   font-family: 'League Spartan';
 
   #title{
@@ -345,6 +345,7 @@ body{
 
   .timeline{
     text-align: center;
+
     .element{
 
       h4{
@@ -375,9 +376,9 @@ body{
         display: block;
         margin: auto;
         width:5vw;
-        height: 2px;
+        height: 1px;
         border-radius: 20px;
-        margin-top: 1vh;
+        margin-top: 2vh;
       }
       ul{
         list-style: none;
